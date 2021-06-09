@@ -14,4 +14,4 @@ FROM base as production
 
 ENV NODE_PATH=./build
 
-CMD [ "npm", "run", "build" ]
+CMD [ "npm", "start" ]
