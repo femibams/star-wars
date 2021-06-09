@@ -1,10 +1,10 @@
 {
    "type": "mysql",
-   "host": "mysql",
+   "host": "dfkpczjgmpvkugnb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
    "port": 3306,
    "username": "root",
    "password": "",
-   "database": "tangerine",
+   "database": "ntbtgrj9auutgwmw",
    "synchronize": true,
    "logging": false,
    "entities": [
