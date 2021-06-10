@@ -2,7 +2,13 @@ import { Client, ApiResponse, RequestParams } from '@elastic/elasticsearch'
 import config from '../config';
 import { Log } from '../types/index';
 
-const client = new Client({ node: 'http://elasticsearch:9200' })
+const client = new Client({ 
+    node: config.elastic_search.node,
+    auth: {
+        username: config.elastic_search.username,
+        password: config.elastic_search.password
+    }
+})
 
 export const elasticLogger = async(logObject: Log) => {
     const doc: RequestParams.Index = {
@@ -15,7 +21,7 @@ export const elasticLogger = async(logObject: Log) => {
         console.log("saved to es")
     })
     .catch((err) => {
-        console.log("error from es")
+        console.log("error while saving to es")
         console.log(err)
     })
 }
